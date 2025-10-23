@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thông tin user</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- CSS tùy chỉnh -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý thông tin user</h1>
+        
+        <!-- Form nhập thông tin -->
+        <div class="input-form">
+            <input type="text" id="name" placeholder="Name" class="form-input">
+            <input type="email" id="email" placeholder="Email Address" class="form-input">
+            <input type="date" id="birthdate" class="form-input">
+            <button id="addRow" class="btn">Add Row</button>
+        </div>
+
+        <!-- Bảng hiển thị thông tin -->
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birthdate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+
+        <button id="deleteRow" class="btn delete-btn">Delete Row</button>
+    </div>
+
+    <!-- JavaScript tùy chỉnh -->
+    <script src="script.js"></script>
+</body>
+</html>

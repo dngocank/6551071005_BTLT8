@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work To-Dos</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>WORK TO-DOS</h1>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <p class="instruction-text">Enter text into the input field to add items to your list.</p>
+            <p class="instruction-text">Click the item to mark it as complete.</p>
+            <p class="instruction-text">Click the "X" to remove the item from your list.</p>
+        </div>
+
+        <!-- Input form -->
+        <div class="todo-input">
+            <input type="text" id="newItem" placeholder="New item...">
+            <button id="addItem">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <!-- Todo list -->
+        <ul id="todoList">
+            <!-- Items will be added here dynamically -->
+        </ul>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
