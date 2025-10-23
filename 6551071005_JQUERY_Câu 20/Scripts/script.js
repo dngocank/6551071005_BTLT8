@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Variables
     const slideContainer = $('.slides');
     const images = $('.slides img');
     const imagesPerView = 5;
@@ -7,27 +6,22 @@ $(document).ready(function() {
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Calculate total number of slides
     const totalSlides = images.length - imagesPerView + 1;
 
-    // Create navigation dots
     for (let i = 0; i < totalSlides; i++) {
         $('.dots-container').append(`<span class="dot" data-index="${i}"></span>`);
     }
     $('.dot').first().addClass('active');
 
-    // Function to update slide position
     function updateSlide(index) {
         currentIndex = index;
         const offset = -index * imageWidth;
         slideContainer.css('transform', `translateX(${offset}px)`);
         
-        // Update active dot
         $('.dot').removeClass('active');
         $('.dot').eq(index).addClass('active');
     }
 
-    // Auto play function
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
             let nextIndex = currentIndex + 1;
@@ -35,13 +29,11 @@ $(document).ready(function() {
                 nextIndex = 0;
             }
             updateSlide(nextIndex);
-        }, 3000); // Change slide every 3 seconds
+        }, 3000); 
     }
 
-    // Start auto play initially
     startAutoPlay();
 
-    // Previous button click
     $('.prev').click(function() {
         clearInterval(autoPlayInterval);
         let newIndex = currentIndex - 1;
@@ -52,7 +44,6 @@ $(document).ready(function() {
         startAutoPlay();
     });
 
-    // Next button click
     $('.next').click(function() {
         clearInterval(autoPlayInterval);
         let newIndex = currentIndex + 1;
@@ -63,7 +54,6 @@ $(document).ready(function() {
         startAutoPlay();
     });
 
-    // Dot navigation click
     $('.dot').click(function() {
         clearInterval(autoPlayInterval);
         const index = $(this).data('index');
@@ -71,7 +61,6 @@ $(document).ready(function() {
         startAutoPlay();
     });
 
-    // Pause auto play on hover
     $('.slideshow-container').hover(
         function() {
             clearInterval(autoPlayInterval);
@@ -80,4 +69,5 @@ $(document).ready(function() {
             startAutoPlay();
         }
     );
+
 });
